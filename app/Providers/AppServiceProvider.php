@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
     {
         \Carbon\Carbon::setlocale('zh');
         User::observe(UserObserver::class);
+        \App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
         Topic::observe(TopicObserver::class);
     }
 }
